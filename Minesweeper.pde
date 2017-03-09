@@ -32,7 +32,7 @@ void setup ()
 public void setBombs()
 {  
    
-    for(int nI=0; nI<=3;nI++)
+    for(int nI=0; nI<=70;nI++)
     { 
         int pop=(int)(Math.random()*20);
     int boom=(int)(Math.random()*20);
@@ -51,17 +51,15 @@ public void setBombs()
 }
 public boolean isWon()
 {
-    for (int i=0; i<NUM_ROWS; i++)
-    {
-      for(int n=0; n<NUM_COLS;n++)
+      for(int n=0; n < bombs.size();n++)
       {
-        if(buttons[i][n].isClicked()==true && !bombs.contains(buttons[i][n]))
+        if(bombs.get(n).isMarked() == false)
         {
-            return true;
+            return false;
         }
       }
-    } 
-    return false;
+    
+    return true;
 }
 public void displayLosingMessage()
 {   
@@ -75,20 +73,56 @@ public void displayLosingMessage()
     {
       for(int n=0; n<NUM_COLS;n++)
     {       
-       
-           buttons[i][n].setLabel("");
+        
+           buttons[i][n].setLabel("x");
     }
     } 
          
     }    //your c
         }
     }
+
+    buttons[10][5].setLabel("G");
+    buttons[10][6].setLabel("E");
+    buttons[10][7].setLabel("T");
+    buttons[10][8].setLabel(" ");
+    buttons[10][9].setLabel("R");
+    buttons[10][10].setLabel("E");
+    buttons[10][11].setLabel("K");
+    buttons[10][12].setLabel("T");
+
+    buttons[11][5].setLabel("T");
+    buttons[11][6].setLabel("R");
+    buttons[11][7].setLabel("Y");
+    buttons[11][8].setLabel(" ");
+    buttons[11][9].setLabel("A");
+    buttons[11][10].setLabel("G");
+    buttons[11][11].setLabel("A");
+    buttons[11][12].setLabel("I");
+    buttons[11][13].setLabel("N");
+   
    
     }
 public void displayWinningMessage()
 {   
 
-    buttons[10][0].setLabel("je");//your code here
+     buttons[10][5].setLabel("U");
+    buttons[10][6].setLabel("M");
+    buttons[10][7].setLabel(".");
+    buttons[10][8].setLabel(".");
+    buttons[10][9].setLabel(".");
+    buttons[10][10].setLabel("W");
+    buttons[10][11].setLabel("E");
+    buttons[10][12].setLabel("L");
+    buttons[10][13].setLabel("L");
+    buttons[11][5].setLabel("Y");
+    buttons[11][6].setLabel("O");
+    buttons[11][7].setLabel("U");
+    buttons[11][8].setLabel(" ");
+    buttons[11][9].setLabel("W");
+    buttons[11][10].setLabel("I");
+    buttons[11][11].setLabel("N");
+   
 }
 
 public class MSButton
